@@ -1,6 +1,6 @@
 
 // This is our Server class where the app is running on
-
+require('dotenv').config();
 const express = require("express");
 const path = require('path');
 const mongoose = require('mongoose');
@@ -38,7 +38,7 @@ io.on("connection", function(socket){
 //connecting to our local mongoDb database
 
 const dbUrl = process.env.DB_URL || 'mongodb://0.0.0.0:27017/WebWeaversData';
-const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
+const secret = process.env.SECRET;
 
 const Mentee = require('./Models/MenteeModel');
 const MentorDetails = require('./Models/MentorModel');
@@ -67,7 +67,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const store = new MongoDBStore({
     url: dbUrl,
-    secret,
+    secret: secret,
     touchAfter: 24 * 60 * 60
 });
 
