@@ -1,0 +1,27 @@
+<% layout('./layouts/boilerplate')%>
+<section class="OverviewLessonSections">
+<%- include('./partials/Overview')%>
+
+    <div class="lessonPageSection" >
+        <h1>Upload a Text File</h1>
+        <p>Please upload the whiteboard text file to be processed for subject clustering.</p> 
+        &nbsp
+        <form action="/processFile" method="POST" enctype="multipart/form-data">
+            <input type="file" name="textFile">
+            <button type="submit">Upload</button>
+        </form>
+        &nbsp
+        <% if (fileProcessed) { %>
+            <h2>Processed File Ready for Download:</h2>
+            &nbsp
+            <p>Please download the processed file below.
+            </p>
+            &nbsp
+            <a href="/download/output.txt" download>Download Processed File</a>
+        <% } %>
+    </div>
+
+
+
+</section>
+<script src="/javascripts/CollaspseMenu.js"></script>

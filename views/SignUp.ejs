@@ -1,0 +1,85 @@
+<% layout('./layouts/boilerplate')%>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">  
+        <link rel="stylesheet" href="BackgroundImages.css">
+        <div class="container d-flex justify-content-center align-items-center mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+                    <div class="card shadow">
+                        <!-- <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                            alt="" class="card-img-top" /> -->
+                        <div class="card-body">
+                            <%- include('./partials/flash')%>
+                            <h5 class="card-title">Login</h5>
+                            <form action="/Register" method="POST" >
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="Name">Name</label>
+                                    <input class="form-control" type="text"  id="Name" name="Name" autofocus required>
+                                   
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label class="form-label" for="username">Username</label>
+                                    <input class="form-control" type="text"  id="username" name="username" autofocus required>
+                                   
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label class="form-label" for="Surname">Surname</label>
+                                    <input class="form-control"  type="text"  id="Surname" name="Surname" required>
+                             
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="Email">Email</label>
+                                    <input class="form-control" type="text"  id="Email" name="Email" required>
+                                    <div class="valid-feedback">
+                                    
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input class="form-control" type="password" id="password" name="password" required>
+                                 
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="Confirmpassword">Confirm password</label>
+                                    <input class="form-control" type="password"  id="ConfirmPassword" name="ConfirmPassword" required>
+                                    
+                                </div>
+                             
+                                <button id="SignUpbutton2" class="btn btn-success btn-block">Sign Up</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+<!--          
+<Section class="SigupSection">
+    
+    <form action="/Register" method="POST">
+        <div class="SignUpdetails">
+            <%#- include('./partials/flash')%>
+            <label  id="SignUpLabel">SignUp</label>
+            <input class="Userdetails" type="text" placeholder="Name" id="Name" name="Name" required>
+            <input class="Userdetails" type="text" placeholder="Username" id="username" name="username" required>
+            <input class="Userdetails" type="text" placeholder="Surname" id="Surname" name="Surname" required>
+            
+            <input class="Userdetails" type="text" placeholder="Email" id="Email" name="Email" required>
+            <input class="Userdetails" type="password" placeholder="Create Password" id="password" name="password" required>
+            <input class="Userdetails" type="password" placeholder="ConfirmPassword" id="ConfirmPassword" name="ConfirmPassword" required>
+           
+            <a href="">Add profile picture</a> -->
+            <!-- <button id="SignUpbutton2">Sign Up</button>
+        </div>
+    </form>
+</Section> -->
+
+
+

@@ -1,0 +1,90 @@
+
+<% layout('./layouts/boilerplate')%>
+<section class="OverviewLessonSections">
+<%- include('./partials/Overview')%>
+
+<section id="page4" class="LessonPageSectionFlex">
+    <div class="lessonPageSection">
+        <h1>Time starts now: <span id="time"></span></h1>
+        <h2>Lesson 4: Career Planning</h2>
+        <div class="DisplayFlex">
+            <div class="DescriptionAndVideo">
+            <p class="LessonDescription">
+             Welcome to the fourth week of our course, where we're about to embark on the exhilarating adventure of career planning! Yes, we know you've probably changed your mind about your future career path more times than you've changed your profile picture, and that's perfectly okay. 
+            Career planning is like trying to decide which emoji best describes your future self - it's a journey full of surprises! During this session, we'll explore various aspects of career planning. 
+            
+            Students are encouraged to watch the following video and respond to the questions provided afterward.
+             </p>
+        <div  class="watchVideo">
+            
+            <iframe id="myIFrame" width="560" height="315" src="https://www.youtube.com/embed/jVssNpBk37k" title="How to Build an Effective Career Plan (Top 5 Tips)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+            </iframe>
+        </div>
+
+         </div>
+
+
+         <div  class="chatApplication">
+            <div>
+                <h2>Join ChatRoom</h2>
+                <br>
+                <button class="JoinButton" id="button2">Join Chat</button>
+            </div>
+            
+        </div>
+        
+        <div class ="chatSection"> 
+            <div class="ChatNavBar">
+                
+                
+                <div class="chatRoomTitle" >ChatRoom </div>
+                <button class="ExitButton" id="ClickExit" >Exit</button>
+            </div>
+            <div class="messages">
+            </div>
+            <div class="TextandSend">
+                <!-- <textarea name="UserTextArea" id="Message" cols="30" rows="10"></textarea> -->
+                <input type="text" id="message-input">
+                <button class="SendButton" >Send</button>
+        
+            </div>
+        
+        </div>
+            
+        
+        
+        
+    
+    </div>
+
+
+        <br>
+        <h2 >Resources: Career Planning</h2>
+        <p>Please find below resources for this weeks lesson</p>
+        <a id="pdFile" href="https://online.nvcc.edu/counseling/introduction_to_the_career_planning_process.pdf" target="_blank">Career_Planning.pdf</a>
+        <br>
+        <br>
+        <h2>Whiteboard: Career Planning</h2>
+        
+        <p>Please add your thoughts to this weeks whiteboard</p>
+        
+            <div class="whiteboardApi" style="width: 1200px; height: 700px;" id="wt-container"></div>
+        
+            <script src="https://www.whiteboard.team/dist/api.js"></script>
+            <script type="text/javascript">
+                var wt = new api.WhiteboardTeam('#wt-container', {
+                    clientId: '8fa29ad3d03237f44d2d90b45716eb33',
+                    boardCode: 'mentknow_careerplaning',
+                    participant: {name:"<%=currentUser.username%>"}
+                });
+            </script>
+    </div>
+</Section>
+</section>
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="/javascripts/CollaspseMenu.js"></script>
+<script src="/javascripts/Metrics.js"></script>
+
+<script src="/javascripts/ChatROOM.js"></script>

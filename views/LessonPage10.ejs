@@ -1,0 +1,85 @@
+
+<% layout('./layouts/boilerplate')%>
+<section class="OverviewLessonSections">
+<%- include('./partials/Overview')%>
+
+<section id="page10" class="LessonPageSectionFlex">
+    <div class="lessonPageSection">
+        <h1>Time starts now: <span id="time"></span></h1>
+        <h2>Lesson 10: Avoiding Procrastination</h2>
+        <div class="DisplayFlex">
+            <div class="DescriptionAndVideo">
+            <p class="LessonDescription">
+            Congratulations on reaching Week 10 of our academic adventure! We've covered a lot of ground, 
+            from goal setting to developing leadership skills. Now, it's time to tackle one of the biggest 
+            challenges students face : Avoiding Procrastination!
+
+            As a University of Cape Town first-year student, you're no stranger to the allure of procrastination. 
+            Whether it's binge-watching your favorite series or organizing your bookshelf for the third time, 
+            we've all been there. But fear not! In this session, we'll explore strategies to conquer procrastination 
+            and stay on top of your studies.
+            
+        </p>
+        <div  class="watchVideo">
+            
+            <iframe id="myIFrame" width="560" height="315" src="https://www.youtube.com/embed/Y1NcEs2ZT14" title="How To Use Procrastination To Your Advantage (Productive Procrastination)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+            </iframe>
+        </div>
+        </div>
+        <div  class="chatApplication">
+            <div>
+                <h2>Join ChatRoom</h2>
+                <br>
+                <button class="JoinButton" id="button2">Join Chat</button>
+            </div>
+            
+        </div>
+        
+        <div class ="chatSection"> 
+            <div class="ChatNavBar">
+                
+                
+                <div class="chatRoomTitle" >ChatRoom </div>
+                <button class="ExitButton" id="ClickExit" >Exit</button>
+            </div>
+            <div class="messages">
+            </div>
+            <div class="TextandSend">
+                <!-- <textarea name="UserTextArea" id="Message" cols="30" rows="10"></textarea> -->
+                <input type="text" id="message-input">
+                <button class="SendButton" >Send</button>
+        
+            </div>
+        
+        </div>
+        </div>
+        <br>
+        <h2 >Resources: Avoiding Procrastination</h2>
+        <p>Please find below resources for this weeks lesson</p>
+        <a id="pdFile" href="https://intranet.ecu.edu.au/__data/assets/pdf_file/0015/20733/Procrastination.pdf " target="_blank">Avoiding_Procrastination.pdf</a>
+        <br>
+        <br>
+        <h2>Whiteboard: Avoiding Procrastination</h2>
+        
+        <p>Please add your thoughts to this weeks whiteboard</p>
+        
+            <div class="whiteboardApi" style="width: 1200px; height: 700px;" id="wt-container"></div>
+        
+            <script src="https://www.whiteboard.team/dist/api.js"></script>
+            <script type="text/javascript">
+                var wt = new api.WhiteboardTeam('#wt-container', {
+                    clientId: '8fa29ad3d03237f44d2d90b45716eb33',
+                    boardCode: 'mentknow_avoidprocrastination',
+                    participant: {name:"<%=currentUser.username%>"}
+                });
+            </script>
+    </div>
+</Section>
+</section>
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="/javascripts/CollaspseMenu.js"></script>
+<script src="/javascripts/Metrics.js"></script>
+
+<script src="/javascripts/ChatROOM.js"></script>

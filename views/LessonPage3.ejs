@@ -1,0 +1,92 @@
+
+<% layout('./layouts/boilerplate')%>
+<section class="OverviewLessonSections">
+<%- include('./partials/Overview')%>
+
+<section id="page3" class="LessonPageSectionFlex">
+    <div class="lessonPageSection">
+        <h1>Time starts now: <span id="time"></span></h1>
+        <h2>Lesson 3: Study Skills</h2>
+        <div class="DisplayFlex">
+            <div class="DescriptionAndVideo">
+            <p class="LessonDescription">
+                 Welcome to the third week of our course! This week, we're tackling the enigmatic world of study skills. As students, we've all had those moments when we've stared at our textbooks and wondered if we're deciphering an ancient language. Fear not, for we're here to decode the 
+            secrets of successful studying! During this session, we'll explore strategies and techniques to supercharge your study habits. Students are encouraged to watch the following video and respond to the questions provided afterward.
+
+
+            </p>
+            <div  class="watchVideo">
+                
+                <iframe id="myIFrame" width="560" height="315" src="https://www.youtube.com/embed/rKDU3Z5rEVs" title="The Best Study and Learning Technique - The Feynman Technique (animated)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+                </iframe>
+            </div>
+            </div>
+
+            <div  class="chatApplication">
+                <div>
+                    <h2>Join ChatRoom</h2>
+                    <br>
+                    <button class="JoinButton" id="button2">Join Chat</button>
+                </div>
+                
+            </div>
+            
+            <div class ="chatSection"> 
+                <div class="ChatNavBar">
+                    
+                    
+                    <div class="chatRoomTitle" >ChatRoom </div>
+                    <button class="ExitButton" id="ClickExit" >Exit</button>
+                </div>
+                <div class="messages">
+                </div>
+                <div class="TextandSend">
+                    <!-- <textarea name="UserTextArea" id="Message" cols="30" rows="10"></textarea> -->
+                    <input type="text" id="message-input">
+                    <button class="SendButton" >Send</button>
+            
+                </div>
+            
+            </div>
+                
+            
+            
+            
+        
+        </div>
+        
+        
+        
+        
+        
+        &nbsp
+        <h2 >Resources: Study Skills</h2>
+        <p>Please find below resources for this weeks lesson</p>
+        <a id="pdFile" href="http://www2.gcc.edu/arc/docs/StudyTips1.pdf" target="_blank">Study_Skills.pdf</a>
+        <br>
+        <br>
+        <h2>Whiteboard: Study Skills</h2>
+        
+        <p>Please add your thoughts to this weeks whiteboard</p>
+        
+            <div class="whiteboardApi" style="width: 1200px; height: 700px;" id="wt-container"></div>
+        
+            <script src="https://www.whiteboard.team/dist/api.js"></script>
+            <script type="text/javascript">
+                var wt = new api.WhiteboardTeam('#wt-container', {
+                    clientId: '8fa29ad3d03237f44d2d90b45716eb33',
+                    boardName:'Lesson 3: Study Skills',
+                    boardCode: 'mentknow_studyskills',
+                    participant: {name:"<%=currentUser.username%>"}
+                });
+            </script>
+    </div>
+</Section>
+</section>
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="/javascripts/CollaspseMenu.js"></script>
+<script src="/javascripts/Metrics.js"></script>
+
+<script src="/javascripts/ChatROOM.js"></script>

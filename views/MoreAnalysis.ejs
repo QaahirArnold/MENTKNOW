@@ -1,0 +1,91 @@
+<% layout('./layouts/boilerplate')%>
+<section class="OverviewLessonSections">
+<%- include('./partials/Overview')%>
+    
+    <section class="VisualizationGraphs">
+        <!-- <h4> Student Interactions for Goal Setting Lesson</h4> -->
+        <div>
+            
+            <canvas id="myChart" width="400" height ="400">  </canvas>
+        </div>
+
+        <div>
+            <canvas id="myChart2" width="400" height ="400"></canvas>
+        </div>
+        <div>
+            <canvas id="myChart3" width="400" height ="400"></canvas>
+        </div>
+    </section>
+    
+    
+    <script>
+        const ctx = document.getElementById('myChart2');
+      
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['Video', 'WhiteBoard', 'Chat', 'Resource', 'Quiz', 'Other'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+       
+       <script>
+        const ctx2 = document.getElementById('myChart');
+      
+        new Chart(ctx2, {
+          type: 'bar',
+          data: {
+            labels: ['Video', 'WhiteBoard', 'Chat', 'Resource', 'Quiz', 'Other'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+       <script>
+        const ctx3 = document.getElementById('myChart3');
+      
+        new Chart(ctx3, {
+          type: 'pie',
+          data: {
+            labels: ['Video', 'WhiteBoard', 'Chat', 'Resource', 'Quiz', 'Other'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+
+
+</section>
+<script src="/javascripts/CollaspseMenu.js"></script>

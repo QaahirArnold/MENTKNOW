@@ -1,0 +1,29 @@
+#MentorSession {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #MentorSession td, #MentorSession th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #MentorSession tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #MentorSession tr:hover {background-color: #ddd;}
+  
+  #MentorSession th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #338ecf;
+    color: white;
+  }
+  .MentorshipSession{
+    margin: 30px;
+  }
+
+  .MentorshipSession  h4{
+    margin-bottom: 16px;
+  }

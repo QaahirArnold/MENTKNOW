@@ -1,0 +1,93 @@
+
+<% layout('./layouts/boilerplate')%>
+<section class="OverviewLessonSections">
+<%- include('./partials/Overview')%>
+
+<section id="page1" class="LessonPageSectionFlex">
+    <div class="lessonPageSection">
+        <h1>Time starts now: <span id="time"></span></h1>
+        <h2>Lesson 1: Goal Setting</h2>
+        <div class="DisplayFlex">
+            <div class="DescriptionAndVideo">
+            <p class="LessonDescription">
+                The first week of our lesson we are going to talk about goal setting. Goal Setting is very important especially for first year students. In this section we are going to go through goal setting.
+                
+                The Student has do video the following video and answer the questions that follow.
+            </p>
+            
+                <div  class="watchVideo">
+                
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/FFT6uP1fIFI" title="Setting Goals" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                    <iframe id="myIFrame" width="560" height="315" src="https://www.youtube.com/embed/PCRSVRD2EAk" title="Setting SMART Goals - How To Properly Set a Goal (animated)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        
+                    </iframe>
+                </div>
+            </div>
+        
+        
+            
+            <div  class="chatApplication">
+                <div>
+                    <h2>Join ChatRoom</h2>
+                    <br>
+                    <button class="JoinButton" id="button2">Join Chat</button>
+                </div>
+                
+            </div>
+            
+            <div class ="chatSection"> 
+                <div class="ChatNavBar">
+                    
+                    
+                    <div class="chatRoomTitle" >ChatRoom </div>
+                    <button class="ExitButton" id="ClickExit" >Exit</button>
+                </div>
+                <div class="messages">
+                </div>
+                <div class="TextandSend">
+                    <!-- <textarea name="UserTextArea" id="Message" cols="30" rows="10"></textarea> -->
+                    <input type="text" id="message-input">
+                    <button class="SendButton" >Send</button>
+            
+                </div>
+            
+            </div>
+                
+            
+            
+            
+        
+        </div>
+        
+        
+        <br>
+        <h2 >Resources: Goal Setting</h2>
+        <p>Please find below resources for this weeks lesson</p>
+        <a id="pdFile" href="https://www.getselfhelp.co.uk/docs/SMARTgoals.pdf " target="_blank">Goal_Setting.pdf</a>
+        <br>
+        <br>
+        <h2>Whiteboard: Goal Setting</h2>
+      
+        <p>Please add your thoughts to this weeks whiteboard</p>
+        
+            <div class="whiteboardApi" style="width: 1200px; height: 700px; border: 30px" id="wt-container"></div>
+        
+            <script src="https://www.whiteboard.team/dist/api.js"></script>
+            <script type="text/javascript">
+                var wt = new api.WhiteboardTeam('#wt-container', {
+                    clientId: '8fa29ad3d03237f44d2d90b45716eb33',
+                    boardCode: 'mentknow_goalsetting',
+                    participant: {name:"<%=currentUser.username%>"}
+                });
+            </script>
+    </div>
+</Section>
+</section>
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="/javascripts/CollaspseMenu.js"></script>
+<script src="/javascripts/Metrics.js"></script>
+
+<script src="/javascripts/ChatROOM.js"></script>
+
+
