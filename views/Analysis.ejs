@@ -90,14 +90,15 @@
     const TotalsVideoClicks = <%- JSON.stringify(TotalsVideoClicks) %>;
     const TotalsBoardClicks = <%- JSON.stringify(TotalsBoardClicks) %>;
     const countPdfClicks = <%- JSON.stringify(TotalsPdfClicks) %>;
-    
+    const TotalchatInteraction = <%- JSON.stringify(TotalchatInteraction) %>;
+
     new Chart(ctx2, {
       type: 'bar',
       data: {
         labels: ['Video', 'WhiteBoard', 'Chat', 'Resources'],
         datasets: [{
           label: '# of Clicks',
-          data: [TotalsVideoClicks, TotalsBoardClicks, 0, countPdfClicks],
+          data: [TotalsVideoClicks, TotalsBoardClicks, TotalchatInteraction, countPdfClicks],
           borderWidth: 1
         }]
       },
@@ -124,7 +125,7 @@
       const CombinedBoardClicks = <%- JSON.stringify(CombinedBoardClicks) %>;
       const CombinedTotalTime = <%- JSON.stringify(CombinedTotalTime) %>;
       const CombinedTotalpageVisit = <%- JSON.stringify(CombinedTotalpageVisit) %>;
-      
+      const CombinedchatInteraction = <%- JSON.stringify(CombinedchatInteraction) %>;
       
       new Chart(ctx3, {
         type: 'line',
