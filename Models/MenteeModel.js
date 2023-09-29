@@ -23,7 +23,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     },
     lesson2:{
         pageNo: String,
@@ -32,7 +33,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     },
     lesson3:{
         pageNo: String,
@@ -41,7 +43,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     },
     lesson4:{
         pageNo: String,
@@ -50,7 +53,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     },
     lesson5:{
         pageNo: String,
@@ -59,7 +63,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     },
     lesson6:{
         pageNo: String,
@@ -68,7 +73,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     },
     lesson7:{
         pageNo: String,
@@ -77,7 +83,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     },
     
     lesson8:{
@@ -87,7 +94,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     },
     lesson9:{
         pageNo: String,
@@ -96,7 +104,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     },
     lesson10:{
         pageNo: String,
@@ -105,7 +114,8 @@ const UserSchema = new Schema({
         WhiteBoardClicks: Number,
         resourcesClicks: Number,
         timeSpent: Number,
-        pageVisited:Number
+        pageVisited:Number,
+        chatInteraction:Number
     }
 });
 UserSchema.plugin(passportLocalMongoose);
