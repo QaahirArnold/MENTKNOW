@@ -4,6 +4,7 @@
 //We are going listen to events and send messages between students  send through
 //using socket programming
 
+
 (function(){
     // console.log("Hello..");
     // const DisplayChatRoom = document.querySelector(".DisplayFlex");
@@ -18,7 +19,7 @@
     SendButton = document.querySelector(".SendButton")
     
     JoinButton.addEventListener("click", function() {
-        socket.emit("newuser","Kwena");
+        socket.emit("newuser",UserName);
         document.querySelector(".chatApplication").classList.add("setChatAppNone");
         
         
@@ -27,7 +28,7 @@
     ;})
 
     ExitButton.addEventListener("click", function() {
-        socket.emit("exituser","kwena");
+        socket.emit("exituser",UserName);
         document.querySelector(".chatSection").classList.remove("setSection");
         console.log("hello")
         document.querySelector(".chatApplication").classList.remove("setChatAppNone");
@@ -37,7 +38,7 @@
     
     SendButton.addEventListener("click", function() {
         
-        console.log("Eta");
+        
         let Usermessage = document.querySelector("#message-input").value;
         console.log(Usermessage);
 		
@@ -46,11 +47,11 @@
 			return;
 		}
 		renderMessage("my",{
-			username:"kwena",
+			username:UserName,
 			text:Usermessage
 		});
 		socket.emit("chat",{
-			username:"kwena",
+			username:UserName,
 			text:Usermessage
 		});
 		document.querySelector("#message-input").value = ""; 
