@@ -476,9 +476,18 @@ nav{
 }
 
 /* Media Queries for Mobile Devices */
-@media screen and (max-width: 768px) {
-    .homepageTitle {
+@media (max-width: 768px) {
+    .Homepage {
+        /* Adjust styles for smaller screens */
+    }
+
+    .logo, .homepageTitle {
         font-size: 24px;
+    }
+
+    .homepageTitle {
+        margin-top: 10px;
+        font-size: 22px;
     }
 
     .DescriptionText {
@@ -486,16 +495,12 @@ nav{
     }
 
     .loginButton, .SignButton {
-        width: 100px;
+        width: 120px;
         font-size: 14px;
     }
 
-    .Userdetails {
-        width: 100%;
-    }
-
-    .UserTab {
-        width: 100%;
+    .SignUpdetails, .LogInDetails {
+        margin-top: 10px;
     }
 
     .profileImage {
@@ -504,25 +509,10 @@ nav{
     }
 
     .lessonPageSection p {
-        width: 100%;
-    }
-
-    #lessonList, #lessonOverview {
-        margin-left: 0;
-    }
-
-    .CardBox {
-        width: 100%;
-        margin: 15px 0;
-    }
-
-    #message-input {
         font-size: 14px;
     }
 
-    .OverviewDeatils {
-        width: 100%;
-        margin: 20px 0;
-        padding: 0 5%;
+    .whiteboardApi {
+        margin-bottom: 10px;
     }
 }
