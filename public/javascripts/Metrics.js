@@ -12,11 +12,19 @@ let isActive = true;
 let startTime;
 let totalTime = 0;
 let pageVisited = 0;
+let chatInteraction = 0;
 
 pdFile = document.querySelector('#pdFile');
-
+JoinButton = document.querySelector(".JoinButton");
 SectionEleemnt = document.querySelector('.LessonPageSectionFlex');
 pageNumber = SectionEleemnt.getAttribute("id");
+
+JoinButton.addEventListener("click", function() {
+  chatInteraction = 1;
+  SendToDataBase("chatClick");
+ 
+;})
+
 
 
 pdFile.addEventListener("click", function(req, res) {
@@ -98,7 +106,7 @@ window.setInterval(function() {
 // track time when user closes the window
 window.addEventListener("beforeunload", function() {
   stopTrackingTime();
-  console.log("Total time spent on page: " + totalTime / 1000 + " seconds");
+  // console.log("Total time spent on page: " + totalTime / 1000 + " seconds");
   SendToDataBase("beforeunload");
             
   
@@ -110,6 +118,7 @@ const SendToDataBase = async function (element){
     try {
         let payload = {
                     countPdfClicks: countPdfClicks,
+                    chatInteraction: chatInteraction,
                     videoClicks: videoClicks,
                     WhiteBoardClicks: WhiteBoardClicks,
                     pageNumber:pageNumber,
@@ -125,9 +134,6 @@ const SendToDataBase = async function (element){
         console.log("ERROR", e);
     }
 };
-
-
-
 
 
 
