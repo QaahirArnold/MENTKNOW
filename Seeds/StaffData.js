@@ -8,7 +8,7 @@ const MentorDetails = require('../Models/MentorModel');
 const Mentee = require('../Models/MenteeModel');
 const CoordinatorDeatils = require('../Models/CoordinatorModel');
 
-mongoose.connect('mongodb+srv://arnmog014:arnmog014@mentknow.sjgkodg.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://0.0.0.0:27017/WebWeaversData', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -20,16 +20,16 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
-lesson1 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-lesson2 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-lesson3 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-lesson4 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-lesson5 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-lesson6 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-lesson7 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-lesson8 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-lesson9 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-lesson10 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
+lesson1 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+lesson2 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+lesson3 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+lesson4 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+lesson5 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+lesson6 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+lesson7 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+lesson8 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+lesson9 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+lesson10 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
 
 TempListMentors = [{Name:"John",  Email:"JTYGGHY03@myuct.ac.za", Role:"Mentor" ,username:"John" ,Surname:"Spike",lesson1,lesson2,lesson3,
                     lesson3,lesson4,lesson5,lesson6,lesson7,lesson8,lesson9,lesson10},
