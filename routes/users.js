@@ -154,12 +154,13 @@ router.post('/LogIn',passport.authenticate('local', {failureFlash: true, failure
 //Here we are updating the data from user interaction to the database
 router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
     
-    const {pageNumber,countPdfClicks,videoClicks,timeSpent,WhiteBoardClicks,ElementName} = req.body;
+    const {pageNumber,chatInteraction,countPdfClicks,videoClicks,timeSpent,WhiteBoardClicks,ElementName} = req.body;
     
     let pdf =  parseInt (countPdfClicks);
     let vid =  parseInt (videoClicks);
     let board= parseInt (WhiteBoardClicks);
     let time = parseFloat(timeSpent);
+    let chat = parseFloat(chatInteraction);
     
    
     
@@ -181,7 +182,11 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         }else if(ElementName==='beforeunload'){
             await Mentee.updateMany({_id: req.user._id},{ $inc: SetProperty5});
             
+        }else if(ElementName==='chatClick'){
+            await Mentee.updateMany({_id: req.user._id},{ $inc: SetProperty6});
+            
         }
+            
 
     };
 
@@ -192,7 +197,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson1.videoClicks":vid};
         SetProperty4 = {"lesson1.WhiteBoardClicks":board};
         SetProperty5 = {"lesson1.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson1.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     }else if(pageNumber==="page2"){
         pageVisited = req.session.countVisitedSitedPage2;
         SetProperty1 = {"lesson2.pageVisited":pageVisited}
@@ -200,7 +206,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson2.videoClicks":vid};
         SetProperty4 = {"lesson2.WhiteBoardClicks":board};
         SetProperty5 = {"lesson2.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson2.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     
     }else if(pageNumber==="page3"){
         pageVisited = req.session.countVisitedSitedPage3;
@@ -209,7 +216,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson3.videoClicks":vid};
         SetProperty4 = {"lesson3.WhiteBoardClicks":board};
         SetProperty5 = {"lesson3.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson3.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     }else if(pageNumber==="page4"){
         pageVisited = req.session.countVisitedSitedPage4;
         SetProperty1 = {"lesson4.pageVisited":pageVisited}
@@ -217,7 +225,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson4.videoClicks":vid};
         SetProperty4 = {"lesson4.WhiteBoardClicks":board};
         SetProperty5 = {"lesson4.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson4.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     }else if(pageNumber==="page5"){
         pageVisited = req.session.countVisitedSitedPage5;
         SetProperty1 = {"lesson5.pageVisited":pageVisited}
@@ -225,7 +234,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson5.videoClicks":vid};
         SetProperty4 = {"lesson5.WhiteBoardClicks":board};
         SetProperty5 = {"lesson5.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson5.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     }else if(pageNumber==="page6"){
         pageVisited = req.session.countVisitedSitedPage6;
         SetProperty1 = {"lesson6.pageVisited":pageVisited}
@@ -233,7 +243,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson6.videoClicks":vid};
         SetProperty4 = {"lesson6.WhiteBoardClicks":board};
         SetProperty5 = {"lesson6.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson6.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     }else if(pageNumber==="page7"){
         pageVisited = req.session.countVisitedSitedPage7;
         SetProperty1 = {"lesson7.pageVisited":pageVisited}
@@ -241,7 +252,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson7.videoClicks":vid};
         SetProperty4 = {"lesson7.WhiteBoardClicks":board};
         SetProperty5 = {"lesson7.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson7.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     }else if(pageNumber==="page8"){
         pageVisited = req.session.countVisitedSitedPage8;
         SetProperty1 = {"lesson8.pageVisited":pageVisited}
@@ -249,7 +261,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson8.videoClicks":vid};
         SetProperty4 = {"lesson8.WhiteBoardClicks":board};
         SetProperty5 = {"lesson8.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson8.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     }else if(pageNumber==="page9"){
         pageVisited = req.session.countVisitedSitedPage9;
         SetProperty1 = {"lesson9.pageVisited":pageVisited}
@@ -257,7 +270,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson9.videoClicks":vid};
         SetProperty4 = {"lesson9.WhiteBoardClicks":board};
         SetProperty5 = {"lesson9.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson9.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     }else if(pageNumber==="page10"){
         pageVisited = req.session.countVisitedSitedPage10;
         SetProperty1 = {"lesson10.pageVisited":pageVisited}
@@ -265,7 +279,8 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
         SetProperty3 = {"lesson10.videoClicks":vid};
         SetProperty4 = {"lesson10.WhiteBoardClicks":board};
         SetProperty5 = {"lesson10.timeSpent":time};
-        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5);
+        SetProperty6 = {"lesson10.chatInteraction":chat};
+        UpdateDateBase(pageVisited,1,SetProperty1,SetProperty2,SetProperty3,SetProperty4,SetProperty5,SetProperty6);
     }
     res.sendStatus(200);
 
@@ -275,16 +290,16 @@ router.post('/UpdateDateBase',isLoggedIn,async (req, res) => {
 //This router is Regitering User information to the data base
 router.post('/Register', async (req, res) => {
     
-    lesson1 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-    lesson2 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-    lesson3 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-    lesson4 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-    lesson5 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-    lesson6 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-    lesson7 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-    lesson8 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-    lesson9 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
-    lesson10 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0};
+    lesson1 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+    lesson2 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+    lesson3 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+    lesson4 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+    lesson5 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+    lesson6 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+    lesson7 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+    lesson8 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+    lesson9 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
+    lesson10 = {countPdfClicks: 0,videoClicks: 0,WhiteBoardClicks: 0,timeSpent: 0,pageVisited: 0,chatInteraction: 0};
 
     
     
@@ -328,6 +343,7 @@ router.post('/Analysis',isLoggedIn,async (req, res) => {
     TotalsBoardClicks = 0;
     TotalTime = 0;
     TotalpageVisit = 0;
+    TotalchatInteraction = 0;
 
 
 
@@ -337,6 +353,7 @@ router.post('/Analysis',isLoggedIn,async (req, res) => {
     CombinedBoardClicks = [];
     CombinedTotalTime = [];
     CombinedTotalpageVisit = [];
+    CombinedchatInteraction= [];
     
     if(LessonNumber==="All"){
         for(let i=0;i<CombinedLessons.length;i++){
@@ -348,6 +365,7 @@ router.post('/Analysis',isLoggedIn,async (req, res) => {
                 TotalsBoardClicks+= GetAllData[j][CombinedLessons[i]].WhiteBoardClicks;
                 TotalTime+= (GetAllData[j][CombinedLessons[i]].timeSpent);
                 TotalpageVisit+= GetAllData[j][CombinedLessons[i]].pageVisited;
+                TotalchatInteraction+= GetAllData[j][CombinedLessons[i]].chatInteraction;
 
                 
                 
@@ -358,18 +376,20 @@ router.post('/Analysis',isLoggedIn,async (req, res) => {
             CombinedBoardClicks.push(TotalsBoardClicks);
             CombinedTotalTime.push(TotalTime);
             CombinedTotalpageVisit.push(TotalpageVisit);
+            CombinedchatInteraction.push(TotalchatInteraction);
 
             TotalsPdfClicks = 0;
             TotalsVideoClicks = 0;
             TotalsBoardClicks = 0;
             TotalTime = 0;
             TotalpageVisit = 0;
+            TotalchatInteraction =0;
 
         }
 
    
         
-        return res.render('Analysis',{CombinedPdfClicks,CombinedVideoClicks,CombinedBoardClicks,CombinedTotalTime,CombinedTotalpageVisit,LessonNumber});
+        return res.render('Analysis',{CombinedPdfClicks,CombinedVideoClicks,CombinedBoardClicks,CombinedTotalTime,CombinedchatInteraction,CombinedTotalpageVisit,LessonNumber});
 
 
         
@@ -382,7 +402,8 @@ router.post('/Analysis',isLoggedIn,async (req, res) => {
                 TotalsBoardClicks+= GetAllData[i][LessonNumber].WhiteBoardClicks;
                 TotalTime+= GetAllData[i][LessonNumber].timeSpent;
                 TotalpageVisit+= GetAllData[i][LessonNumber].pageVisited;
-
+                TotalchatInteraction+= GetAllData[i][LessonNumber].chatInteraction;
+            
             
            
             
@@ -390,7 +411,7 @@ router.post('/Analysis',isLoggedIn,async (req, res) => {
     }  
     TotalTime = TotalTime.toFixed(2);
    
-    return res.render('Analysis',{TotalsPdfClicks,TotalsVideoClicks,TotalsBoardClicks,TotalTime,TotalpageVisit,LessonNumber});  
+    return res.render('Analysis',{TotalsPdfClicks,TotalsVideoClicks,TotalsBoardClicks,TotalTime,TotalpageVisit,TotalchatInteraction,LessonNumber});  
 })
 
 router.get('/Analysis',isLoggedIn,async (req, res) => {
@@ -399,13 +420,15 @@ router.get('/Analysis',isLoggedIn,async (req, res) => {
     TotalsBoardClicks=0;
     TotalTime = 0;
     TotalpageVisit =0;
+    TotalchatInteraction =0;
     LessonNumber = "NOTHING";
     CombinedPdfClicks = [];
     CombinedVideoClicks =[];
     CombinedBoardClicks =[];
     CombinedTotalTime = [];
-    CombinedTotalpageVisit =[];
-    res.render('Analysis',{TotalsPdfClicks,TotalsVideoClicks,TotalsBoardClicks,TotalTime,TotalpageVisit,LessonNumber});
+    CombinedTotalpageVisit =[]
+    CombinedchatInteraction = []
+    res.render('Analysis',{TotalsPdfClicks,TotalsVideoClicks,TotalsBoardClicks,TotalTime,TotalpageVisit,TotalchatInteraction,LessonNumber});
 })
 
 
