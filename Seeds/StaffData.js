@@ -8,7 +8,7 @@ const MentorDetails = require('../Models/MentorModel');
 const Mentee = require('../Models/MenteeModel');
 const CoordinatorDeatils = require('../Models/CoordinatorModel');
 
-mongoose.connect('mongodb://0.0.0.0:27017/WebWeaversData', {
+mongoose.connect('mongodb+srv://arnmog014:arnmog014@mentknow.sjgkodg.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
